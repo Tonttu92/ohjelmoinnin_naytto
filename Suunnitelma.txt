@@ -1,0 +1,17 @@
+NÄYTTÖ TEHTÄVÄ SUUNNITELMA
+
+Näyttö valmis: 30.4.2026
+
+Tekijät:
+Toni Barck
+Jesse Paajanen
+
+Projekti:
+Tavoitteena on luoda kirpputori/tavaranvaihto sivusto. Sivusto vaatii rekisteröitymisen, jotta käyttäjä
+voi kerätä profiiliinsa julkaisemansa ilmoitukset sekä näin mahdollistetaan myös käyttäjien välinen viestintä 
+ilmoituksissa.
+
+Sivustolle luodaan ilmoituksille kategoriat: ostetaan, myydään, annetaan ja vuokrataan, joihin käyttäjä
+voi ilmoituksen lisätä ja selata ilmoituksia.
+
+Työnjako (suuntaa antava):
