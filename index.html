@@ -1,71 +1,101 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirppiskierrätys</title>
-    <link href="https://jsdelivr.net" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tavaranvaihto Pro v2.0 🚀</title>
+  <script src="https://tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header class="header-grid">
-        <div class="logo-container">
-            <img src="logo.avif" alt="Kirppiskierrätys Logo" class="logo">
-        </div>
-        <div class="button-container">
-            <button class="storeb" onclick="window.location.href='store.html'">Kauppa</button>
-            <button class="frontpage" onclick="window.location.href='index.html'">Etusivu</button>
-            <button class="logoutbutton" id="logoutbutton" onclick="kirjauduUlos()">Kirjaudu ulos</button>
-        </div>
-    </header>
+<body class="bg-slate-50 min-h-screen font-sans text-slate-900">
 
-    <div class="content">  
-        <!-- KIRJAUTUMISLOMAKE -->
-        <div class="login" id="loginform">
-            <h2>Kirjaudu sisään</h2>
-            <p id="loginerror" class="error-text" style="display:none;">Virheellinen käyttäjätunnus tai salasana</p>
-            <input type="text" id="username" placeholder="Käyttäjänimi">
-            <input type="password" id="userpassword" placeholder="Salasana">
-
-            <div class="loginbuttons">
-                <button class="loginbutton" onclick="kirjaudu()">Kirjaudu sisään</button>
-                <button class="loginbutton" onclick="peruutaKirjautuminen()">Peruuta</button>
-            </div>
-            <h3>Tai</h3>
-            <button class="registerbutton" onclick="avaaRekisterointi()">Rekisteröidy tästä</button>
-        </div>
-
-        <!-- REKISTERÖINTILOMAKE -->
-        <div class="register" id="registerform" style="display:none;">
-            <h2>Rekisteröidy</h2>
-            <p id="registererror" class="error-text"></p>
-            <input type="text" id="newUsername" placeholder="Valitse käyttäjänimi">
-            <input type="email" id="email" placeholder="Sähköposti">
-            <input type="date" id="birthdate">
-            <input type="password" id="newPassword" placeholder="Valitse salasana">
-            <input type="password" id="confirmPassword" placeholder="Syötä salasana uudelleen">
-
-            <div class="createbuttons">
-                <button class="createbutton" onclick="rekisteroidy()">Luo tili</button>
-                <button class="cancelbutton" onclick="peruutaRekisterointi()">Peruuta</button>
-            </div>
-        </div>
-
-        <!-- TERVETULOA-VIESTI (Näkyy kun kirjautunut) -->
-        <div id="welcome-area" style="display:none; text-align: center; margin-top: 50px;">
-            <h1 id="welcome-text"></h1>
-            <p>Olet kirjautunut sisään Kirppiskierrätys-palveluun.</p>
-        </div>
+  <!-- KIRJAUTUMISSIVU -->
+  <div id="auth-section" class="flex items-center justify-center min-h-screen p-4">
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md border border-slate-100">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-extrabold text-blue-600 italic">Kirppis.io</h1>
+        <p class="text-slate-500 mt-2">Kirjaudu sisään tai luo tunnus</p>
+      </div>
+      <input type="text" id="username" placeholder="Käyttäjätunnus" class="w-full p-3 mb-4 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+      <input type="password" id="password" placeholder="Salasana" class="w-full p-3 mb-6 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+      <button onclick="App.handleAuth()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition-colors shadow-lg shadow-blue-200">Aloita kaupankäynti</button>
     </div>
+  </div>
 
-    <footer class="d-flex justify-content-between align-items-center px-4">
-        <p class="mb-0 text-muted">Kirppiskierrätys</p>
-        <p class="mb-0 text-muted mx-auto">About us</p>
-        <div class="theme-button ms-auto">
-            <button class="theme-toggle-button" id="theme-toggle">Switch to Dark Mode</button>
+  <!-- PÄÄNÄKYMÄ -->
+  <div id="main-section" class="hidden">
+    <!-- Navigointi -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b">
+      <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <h1 class="text-xl font-black text-blue-600 italic tracking-tighter">KIRPPIS.IO</h1>
+        <div class="flex gap-2">
+          <button onclick="App.naytaSivu('kaikki')" class="px-4 py-2 hover:bg-slate-100 rounded-lg font-medium transition">🏠 Selaa</button>
+          <button onclick="App.naytaSivu('omat')" class="px-4 py-2 hover:bg-slate-100 rounded-lg font-medium transition">👤 Omat</button>
+          <button onclick="App.logout()" class="ml-4 px-4 py-2 bg-red-50 text-red-600 rounded-lg font-bold hover:bg-red-100 transition">Ulos</button>
         </div>
-    </footer>
+      </div>
+    </nav>
 
-    <script src="main.js"></script>
+    <main class="max-w-6xl mx-auto p-4 md:p-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- VASEN SARAKE: LISÄYS JA HAKU -->
+      <aside class="lg:col-span-4 space-y-6">
+        <!-- Käyttäjän tiedot -->
+        <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-6 rounded-2xl text-white shadow-lg">
+          <p class="opacity-80">Tervetuloa takaisin,</p>
+          <h2 id="user-display" class="text-2xl font-bold">Käyttäjä</h2>
+        </div>
+
+        <!-- Haku & Suodatus -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+          <h3 class="font-bold mb-4 flex items-center gap-2">🔍 Etsi aarteita</h3>
+          <input type="text" id="haku-kentta" placeholder="Mitä etsit tänään?" oninput="App.suodata()" class="w-full p-3 bg-slate-50 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none mb-4">
+          <select id="suodatin-kategoria" onchange="App.suodata()" class="w-full p-3 bg-slate-50 border rounded-xl outline-none">
+            <option value="kaikki">Kaikki kategoriat</option>
+            <option value="Myydään">Myydään</option>
+            <option value="Ostetaan">Ostetaan</option>
+            <option value="Annetaan">Annetaan</option>
+            <option value="Vaihdetaan">Vaihdetaan</option>
+            <option value="Vuokrataan">Vuokrataan</option>
+          </select>
+        </div>
+
+        <!-- Lisäyslomake -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+          <h3 class="font-bold mb-4 flex items-center gap-2">➕ Lisää ilmoitus</h3>
+          <div class="space-y-3">
+            <input type="text" id="p-nimi" placeholder="Otsikko" class="w-full p-3 bg-slate-50 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none">
+            <textarea id="p-kuvaus" placeholder="Kuvaus..." class="w-full p-3 bg-slate-50 border rounded-xl focus:ring-2 focus:ring-blue-500 outline-none h-24"></textarea>
+            <select id="p-kategoria" onchange="App.tarkistaHinta()" class="w-full p-3 bg-slate-50 border rounded-xl outline-none">
+                <option value="Myydään">Myydään</option>
+                <option value="Ostetaan">Ostetaan</option>
+                <option value="Annetaan">Annetaan</option>
+                <option value="Vaihdetaan">Vaihdetaan</option>
+                <option value="Vuokrataan">Vuokrataan</option>
+            </select>
+            <div id="hinta-container">
+              <input type="number" id="p-hinta" placeholder="Hinta (€)" class="w-full p-3 bg-slate-50 border rounded-xl outline-none">
+            </div>
+            <label class="block text-sm font-medium text-slate-500 mt-2">Kuvakaappaus tai valokuva</label>
+            <input type="file" id="p-kuva" accept="image/*" class="text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            <button onclick="App.lisaaIlmoitus()" class="w-full bg-emerald-500 text-white font-bold py-3 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-emerald-100">Julkaise ilmoitus</button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- OIKEA SARAKE: LISTA -->
+      <section class="lg:col-span-8">
+        <div class="flex justify-between items-center mb-6">
+            <h2 id="listan-otsikko" class="text-2xl font-black text-slate-800 tracking-tight">Tuoreimmat ilmoitukset</h2>
+            <div id="loading-indicator" class="hidden animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+        </div>
+        <div id="tuotelista" class="space-y-6">
+            <!-- Ilmoitukset latautuvat tässä -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="main.js"></script>
 </body>
 </html>

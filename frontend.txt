@@ -1,9 +1,0 @@
-/kirpputori-projekti
-  /backend
-    - server.js (Pääpiste)
-    - models/ (Tietokantataulut: User, Item, Message)
-    - routes/ (API-päätepisteet: /login, /lisaa-ilmoitus)
-  /frontend
-    - src/
-      - components/ (Navigointi, Ilmoituskortti)
-      - pages/ (Etusivu, Profiili, Viestit)

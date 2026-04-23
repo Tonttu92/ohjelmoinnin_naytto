@@ -1,39 +1,54 @@
-.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
+body {
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
+    background-color: #f0f2f5;
 }
 
-.login, .register {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-    max-width: 400px;
-    width: 100%;
+.hidden { display: none !important; }
+
+.box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-input {
+input, textarea, select, button {
     width: 100%;
-    margin-bottom: 15px;
     padding: 10px;
+    margin: 8px 0;
     border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.error-text {
-    color: red;
-    font-size: 0.9em;
-    margin-bottom: 10px;
-}
-
-.loginbuttons, .createbuttons {
-    display: flex;
-    gap: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 button {
     cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+.nav { display: flex; gap: 10px; }
+.nav button { flex: 1; background: white; border: 1px solid #ddd; }
+
+.tuote-kortti { border-left: 6px solid #ccc; }
+
+.kategoria-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+}
+
+.viesti {
+    background: #f9f9f9;
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.9em;
 }

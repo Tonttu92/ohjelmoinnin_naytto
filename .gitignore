@@ -1,0 +1,12 @@
+# Ohitetaan asennetut kirjastot (ne ovat valtavia)
+node_modules/
+
+# Ohitetaan paikallinen tietokanta (GitHubiin ei haluta testi-ilmoituksia)
+tietokanta.db
+
+# Ohitetaan selaimen ja käyttöjärjestelmän turhat tiedostot
+.DS_Store
+Thumbs.db
+
+# Ohitetaan ympäristömuuttujat (jos lisäät salaisuuksia myöhemmin)
+.env
