@@ -29,6 +29,7 @@ const App = {
 
         if (this.data.currentUser) {
             this.showApp();
+            this.renderList('kaikki');
            
         }
         this.tarkistaHinta();
