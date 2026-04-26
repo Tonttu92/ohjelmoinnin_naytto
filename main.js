@@ -29,7 +29,7 @@ const App = {
 
         if (this.data.currentUser) {
             this.showApp();
-            await this.lataaPalvelimelta();
+           
         }
         this.tarkistaHinta();
     },
