@@ -24,8 +24,19 @@ const App = {
                 img: null,
                 date: "27.4.2026",
                 messages: []
-             }
-           ];
+            },
+            {
+               id: 2,
+               owner: "Laura",
+               name: "Sohva annetaan",
+               desc: "Siisti sohva, nouto tänään.",
+               cat: "Annetaan",
+               price: null,
+               img: null,
+               date: "27.4.2026",
+               messages: []
+              }
+            ];
 
         if (this.data.currentUser) {
             this.showApp();
