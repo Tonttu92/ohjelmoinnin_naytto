@@ -72,7 +72,7 @@ const App = {
         this.data.currentUser = u;
         sessionStorage.setItem('k_user', u);
         this.showApp();
-        this.lataaPalvelimelta();
+        this.renderList('kaikki');
     },
 
     logout() {
