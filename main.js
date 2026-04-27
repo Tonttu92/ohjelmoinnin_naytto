@@ -13,7 +13,7 @@ const App = {
     // Alustus
     async init() {
         console.log("App alustetaan...");
-       this:data.items = [
+       this.data.items = [
            {
                id: 1, 
                owner: "Jari",
