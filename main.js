@@ -35,6 +35,18 @@ const App = {
                img: null,
                date: "27.4.2026",
                messages: []
+               },
+              {
+               id: 3,
+               owner: "Mikko",
+               name: "PlayStation 5 myynnissä",
+               desc: "Hyväkuntoinen PS5, mukaan yksi ohjain ja pelejä. Toimii moitteettomasti.",
+               cat: "Myydään",
+               price: 450,
+               img: null,
+               date: "27.4.2026",
+               messages: []
+              
               }
             ];
 
