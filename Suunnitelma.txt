@@ -15,3 +15,10 @@ Sivustolle luodaan ilmoituksille kategoriat: ostetaan, myydään, annetaan ja vu
 voi ilmoituksen lisätä ja selata ilmoituksia.
 
 Työnjako (suuntaa antava):
+Toni:
+Jesse
+
+Frontend: HTML5, Tailwind CSS, JavaScript (Async/Await)
+Backend: Node.js, Express
+Tietokanta: SQLite (JSON-pohjainen viestien tallennus)
+Kuvat: Base64-enkoodaus

@@ -92,4 +92,6 @@ app.delete('/api/items/:id', async (req, res) => {
     }
 });
 
-app.listen(PORT);
+app.listen(PORT, () => {
+    console.log(`🚀 Palvelin käynnistetty: http://localhost:${PORT}`);
+});
