@@ -14,16 +14,20 @@ voi kerätä profiiliinsa julkaisemansa ilmoitukset sekä näin mahdollistetaan 
 ilmoituksissa.
 
 Sivustolle luodaan ilmoituksille kategoriat: ostetaan, myydään, annetaan ja vuokrataan, joihin käyttäjä
-voi ilmoituksen lisätä ja selata ilmoituksia. Käyttäjät voivat viestien välityksellä käydä keskustelua 
-tuotteista ja sopia kaupoista.
+voi ilmoituksen lisätä ja selata ilmoituksia. Käyttäjät voivat viestien välityksellä käydä keskustelua tuotteista ja sopia kaupoista.
 
-Olemme keskenämmä sopineet, ettei projektista tehdä liian suurta ja tavoitteenamme on saada projekti
-tehdyksi kahdessa viikossa. Yhteyttä pidämme projektin edetessä Teams:in avulla, näin mahdollistetaan
-molempien työskentely itselle parhaimpaan aikaan. 
+Olemme keskenämmä sopineet, ettei projektista tehdä liian suurta ja tavoitteenamme on saada projekti tehdyksi kahdessa viikossa. Yhteyttä pidämme projektin edetessä Teams:in avulla, näin mahdollistetaan molempien työskentely itselle parhaimpaan aikaan. 
 
 Työnjako (suuntaa antava):
 
 Toni: Kirjautuminen ja rekisteröinti, viestiominaisuudet, 
 
-Jesse: Kategoriat ja ulkoasu,
+Jesse: Kategoriat ja ulkoasu, 
+
+Tekninen toteutus:
+Projekti tehdään Visual Coden ja Githubin avulla, näin mahdollistamme molemmille
+projektin tekemisen omien aikataulujen mukaan. Projektin edetessä koodia testataan ja korjataan.
+Tarvittaessa ominaisuuksia lisätään/poistetaan. 
+Ojelmointi toteutetaan rakenteellisesti, jotta se on toimivaa ja sitä voidaan helposti käsitellä sekä ylläpitää.
+Suunnitelman pohjalta projektia viedään eteenpäin ja myös kehitetään paremmaksi.
 
