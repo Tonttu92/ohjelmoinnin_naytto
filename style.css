@@ -46,12 +46,7 @@ nav h1 {
 .space-y-3 > * + * { margin-top: 0.75rem; }
 
 /* KORTIT JA LAATIKOT */
-.bg-white {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
 }
 
 /* TERVETULOA-LAATIKKO */
