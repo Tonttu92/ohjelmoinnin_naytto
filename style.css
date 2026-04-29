@@ -1,11 +1,20 @@
 /* PERUSASETUKSET */
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f1f5f9;
     color: #1e293b;
     margin: 0;
     padding: 0;
     line-height: 1.5;
+
+    /* TAUSTA */
+    background: linear-gradient(135deg, #dbeafe, #ffffff, #ede9fe);
+    background-size: 200% 200%;
+    animation: gradientMove 12s ease infinite;
+
+    /* keskitys (valinnainen) */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* NAVIGOINTI */
@@ -45,12 +54,7 @@ nav h1 {
 .space-y-3 > * + * { margin-top: 0.75rem; }
 
 /* KORTIT JA LAATIKOT */
-.bg-white {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
 }
 
 /* TERVETULOA-LAATIKKO */
@@ -96,7 +100,23 @@ main {
     grid-template-columns: 1fr;
     gap: 2rem;
 }
+/* VIESTIT */
+.viesti {
+    background: #f9f9f9;
+    margin-bottom: 5px;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
 
+/* ANIMAATIO */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* GRID */
 @media (min-width: 1024px) {
     main {
         grid-template-columns: 350px 1fr;
@@ -113,8 +133,23 @@ main {
     max-width: 700px; /* Rajoittaa kortin leveyttä, jotta se ei veny liikaa */
 }
 
-/* VIESTITYYLIT */
+/* PADDING */
+.p-5 { padding: 1.25rem; }
+
+/* KUVAT */
+img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* TEKSTIT */
 .text-lg { font-size: 1.25rem; font-weight: bold; }
 .text-slate-500 { color: #64748b; font-size: 0.9rem; }
 .text-emerald-600 { color: #059669; font-weight: 800; }
-.bg-blue-50 { background-color: #eff6ff; border-left: 3px solid #3b82f6; }
+
+/* VIESTI BOX */
+.bg-blue-50 { 
+    background-color: #eff6ff; 
+    border-left: 3px solid #3b82f6; 
+}

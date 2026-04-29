@@ -13,9 +13,57 @@ const App = {
     // Alustus
     async init() {
         console.log("App alustetaan...");
+       this.data.items = [
+           {
+               id: 1, 
+               owner: "Jari",
+                name: "Polkupyörä myynnissä",
+                desc: "Hyväkuntoinen maastopyörä, vähän käytetty.",
+                cat: "Myydään",
+                price: 120,
+                img: null,
+                date: "27.4.2026",
+                messages: []
+            },
+            {
+               id: 2,
+               owner: "Laura",
+               name: "Sohva annetaan",
+               desc: "Siisti sohva, nouto tänään.",
+               cat: "Annetaan",
+               price: null,
+               img: null,
+               date: "27.4.2026",
+               messages: []
+               },
+              {
+               id: 3,
+               owner: "Mikko",
+               name: "PlayStation 5 myynnissä",
+               desc: "Hyväkuntoinen PS5, mukaan yksi ohjain ja pelejä. Toimii moitteettomasti.",
+               cat: "Myydään",
+               price: 450,
+               img: null,
+               date: "27.4.2026",
+               messages: []
+             },
+             {
+               id: 4,
+               owner: "Antti",
+               name: "Ostetaan pelituoli",
+               desc: "Etsin hyväkuntoista pelituolia. Hinta noin 30–80€ kunnosta riippuen.",
+               cat: "Ostetaan",
+               price: "30–80",
+               img: null,
+               date: "27.4.2026",
+               messages: []
+              }
+            ];
+
         if (this.data.currentUser) {
             this.showApp();
-            await this.lataaPalvelimelta();
+            this.renderList('kaikki');
+           
         }
         this.tarkistaHinta();
     },
@@ -61,7 +109,7 @@ const App = {
         this.data.currentUser = u;
         sessionStorage.setItem('k_user', u);
         this.showApp();
-        this.lataaPalvelimelta();
+        this.renderList('kaikki');
     },
 
     logout() {

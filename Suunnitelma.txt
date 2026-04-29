@@ -20,7 +20,7 @@ Työnjako (suuntaa antava):
 
 Toni: Kirjautuminen ja rekisteröinti, viestiominaisuudet, 
 
-Jesse: Kategoriat ja ulkoasu, 
+Jesse: Kategoriat ja ulkoasu, ilmoitukset
 
 Tekninen toteutus:
 Projekti tehdään Visual Coden ja Githubin avulla, näin mahdollistamme molemmille
