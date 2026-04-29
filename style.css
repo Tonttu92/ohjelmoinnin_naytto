@@ -149,4 +149,7 @@ img {
     background-color: #eff6ff; 
     border-left: 3px solid #3b82f6; 
 }
+* {
+    color: black !important;
+}
 
